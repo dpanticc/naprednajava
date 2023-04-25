@@ -24,4 +24,5 @@ public class EmailSenderServiceImpl implements EmailSenderService {
 
         this.mailSender.send(simpleMailMessage);
     }
+
 }

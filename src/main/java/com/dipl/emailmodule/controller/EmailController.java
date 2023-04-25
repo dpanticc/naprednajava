@@ -21,4 +21,13 @@ public class EmailController {
         this.emailSenderService.sendEmail(emailMessage.getTo(),emailMessage.getSubject(), emailMessage.getMessage());
         return ResponseEntity.ok("Success");
     }
+
+    @PostMapping("/send-feedback")
+    public ResponseEntity sendFeedback(@RequestBody EmailMessage emailMessage){
+        String from = emailMessage.getFrom();
+        String subject = "Feedback from " + from + ": " + emailMessage.getSubject();
+        String message = "From: " + from + "\n\n" + emailMessage.getMessage();
+        this.emailSenderService.sendEmail("myapp.notifications7@gmail.com", subject, message);
+        return ResponseEntity.ok("Success");
+    }
 }
