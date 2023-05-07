@@ -1,13 +1,11 @@
 package com.dipl.emailmodule.controller;
 
-import com.dipl.emailmodule.resource.EmailMessage;
+import com.dipl.emailmodule.domain.EmailMessage;
 import com.dipl.emailmodule.service.EmailSenderService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
-import org.springframework.web.multipart.MultipartFile;
 
 @RestController
 public class EmailController {
@@ -24,20 +22,6 @@ public class EmailController {
         return ResponseEntity.ok("Success");
     }
 
-//    @PostMapping("/send-email")
-//    public ResponseEntity<String> sendEmail(@RequestParam(required = false) MultipartFile attachment,
-//                                            @RequestParam String to,
-//                                            @RequestParam String subject,
-//                                            @RequestParam String message) {
-//
-//        if (attachment != null && !attachment.isEmpty()) {
-//            String attachmentFilename = attachment.getOriginalFilename();
-//            this.emailSenderService.sendEmail(to, subject, message, attachmentFilename, attachment);
-//        } else {
-//            this.emailSenderService.sendEmail(to, subject, message);
-//        }
-//        return ResponseEntity.ok("Email sent successfully");
-//    }
     @PostMapping("/send-feedback")
     public ResponseEntity sendFeedback(@RequestBody EmailMessage emailMessage){
         String from = emailMessage.getFrom();

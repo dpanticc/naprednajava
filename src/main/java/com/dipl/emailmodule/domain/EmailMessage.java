@@ -1,4 +1,4 @@
-package com.dipl.emailmodule.resource;
+package com.dipl.emailmodule.domain;
 
 public class EmailMessage {
 
