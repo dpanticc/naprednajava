@@ -3,17 +3,18 @@ package com.dipl.emailmodule.resource;
 public class EmailMessage {
 
     private String from;
-
     private String to;
     private String subject;
     private String message;
+    private String attachmentFilename;
 
-    public EmailMessage(String from, String to, String subject, String message) {
+
+    public EmailMessage(String from, String to, String subject, String message, String attachmentFilename) {
         this.from = from;
         this.to = to;
         this.subject = subject;
         this.message = message;
-
+        this.attachmentFilename = attachmentFilename;
     }
 
     public String getFrom() {
@@ -46,5 +47,13 @@ public class EmailMessage {
 
     public void setMessage(String message) {
         this.message = message;
+    }
+
+    public String getAttachmentFilename() {
+        return attachmentFilename;
+    }
+
+    public void setAttachmentFilename(String attachmentFilename) {
+        this.attachmentFilename = attachmentFilename;
     }
 }
