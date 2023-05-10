@@ -9,8 +9,6 @@ public class EmailStatusEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-
-
     @Column(name = "from_email")
     private String from;
 

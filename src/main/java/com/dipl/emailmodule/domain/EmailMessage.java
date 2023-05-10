@@ -1,15 +1,14 @@
 package com.dipl.emailmodule.domain;
 
+import java.util.List;
 public class EmailMessage {
 
     private String from;
-    private String to;
+    private List<String> to;
     private String subject;
     private String message;
     private String attachmentFilename;
-
-
-    public EmailMessage(String from, String to, String subject, String message, String attachmentFilename) {
+    public EmailMessage(String from, List<String> to, String subject, String message, String attachmentFilename) {
         this.from = from;
         this.to = to;
         this.subject = subject;
@@ -25,11 +24,11 @@ public class EmailMessage {
         this.from = from;
     }
 
-    public String getTo() {
+    public List<String> getTo() {
         return to;
     }
 
-    public void setTo(String to) {
+    public void setTo(List<String> to) {
         this.to = to;
     }
 
